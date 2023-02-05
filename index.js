@@ -8,11 +8,12 @@ const cors = require('cors')
 //Jotta frontend pääsee kiinni backendiin
 app.use(cors())
 
-//staattisen sisällön esittämiseen
-app.use(express.static('build'))
 
 //Jotta päästään dataan kiinni niin lisätään expressin json-parseri
 app.use(express.json())
+
+//staattisen sisällön esittämiseen
+app.use(express.static('build'))
 
 app.use(morgan('tiny'))
 
