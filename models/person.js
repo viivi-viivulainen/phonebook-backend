@@ -8,7 +8,7 @@ if (process.argv.length<3) {
 } */
 
 //Tällä käsiksi komentoriviparametriin
-const password = process.argv[2]
+//const password = process.argv[2]
 
 mongoose.set('strictQuery', false)
 
@@ -20,7 +20,8 @@ const url = process.env.MONGODB_URI
 console.log('connecting to', url)
 
 mongoose.connect(url)
-.then(result => {
+  .then(result => {
+    console.log(result)
     console.log('connected to MongoDB')
   })
   .catch((error) => {
@@ -32,7 +33,7 @@ const personSchema = new mongoose.Schema({
   name: {
     type: String,
     minlength: 3,
-    required: true},
+    required: true },
   number: String
 })
 
@@ -44,12 +45,12 @@ personSchema.set('toJSON', {
   }
 })
 
-const Person = mongoose.model('Person', personSchema)
+//const Person = mongoose.model('Person', personSchema)
 
 
-const person = new Person({
+/*const person = new Person({
   name: process.argv[3],
   number: process.argv[4]
-}) 
+}) */
 
 module.exports = mongoose.model('Person', personSchema)

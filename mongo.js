@@ -26,7 +26,7 @@ const Person = mongoose.model('Person', personSchema)
 const person = new Person({
   name: process.argv[3],
   number: process.argv[4]
-}) 
+})
 
 
 Person.find({}).then(result => {
@@ -39,8 +39,9 @@ Person.find({}).then(result => {
 
 person.save().then(result => {
   if (process.argv[3] & process.argv[3] !== '') {
-  console.log('added ' + person.name + ' ' + person.number + ' to the phonebook')
+    console.log('added ' + person.name + ' ' + person.number + ' to the phonebook')
   }
+  console.log(result)
   mongoose.connection.close()
 })
 
