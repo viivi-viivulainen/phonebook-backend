@@ -23,7 +23,7 @@ __webpack_require__.r(__webpack_exports__);
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 
-var _jsxFileName = "C:\\Mytemp\\vitumaja\\fullStack\\part2.2\\src\\App.js",
+var _jsxFileName = "C:\\mytemp\\vitumaja\\fullStack\\part2.2\\src\\App.js",
   _s = __webpack_require__.$Refresh$.signature();
 
 
@@ -46,6 +46,16 @@ const App = () => {
   }, []);
   const notify = function (message) {
     let type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'info';
+    setNotification({
+      message,
+      type
+    });
+    setTimeout(() => {
+      setNotification(null);
+    }, 3000);
+  };
+  const notify_error = function (message) {
+    let type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'alert';
     setNotification({
       message,
       type
@@ -82,6 +92,11 @@ const App = () => {
     _services_personsService__WEBPACK_IMPORTED_MODULE_5__["default"].create(newPerson).then(savedPerson => {
       setPersons(persons.concat(savedPerson));
       notify(`Added ${savedPerson.name}`);
+    }).catch(error => {
+      const virhe = error.response.data;
+      console.log(virhe.error);
+      notify_error(virhe.error);
+      console.log(error.response.data);
     });
   };
   const deletePerson = id => {
@@ -100,13 +115,13 @@ const App = () => {
       children: "Phonebook"
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 92,
       columnNumber: 7
     }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)(_components_Notifications__WEBPACK_IMPORTED_MODULE_4__["default"], {
       notification: notification
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 93,
       columnNumber: 7
     }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)(_components_Filter__WEBPACK_IMPORTED_MODULE_1__["default"], {
       value: filter,
@@ -118,7 +133,7 @@ const App = () => {
       }
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 94,
       columnNumber: 7
     }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)(_components_PersonForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
       name: newName,
@@ -138,19 +153,19 @@ const App = () => {
       addPerson: addPerson
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 98,
       columnNumber: 7
     }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxDEV)(_components_Person__WEBPACK_IMPORTED_MODULE_3__["default"], {
       persons: personsToShow,
       handleDelete: deletePerson
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 105,
       columnNumber: 7
     }, undefined)]
   }, void 0, true, {
     fileName: _jsxFileName,
-    lineNumber: 79,
+    lineNumber: 91,
     columnNumber: 5
   }, undefined);
 };
@@ -208,7 +223,7 @@ __webpack_require__.r(__webpack_exports__);
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 
-var _jsxFileName = "C:\\Mytemp\\vitumaja\\fullStack\\part2.2\\src\\components\\Filter.js";
+var _jsxFileName = "C:\\mytemp\\vitumaja\\fullStack\\part2.2\\src\\components\\Filter.js";
 
 
 const Filter = _ref => {
@@ -280,7 +295,7 @@ __webpack_require__.r(__webpack_exports__);
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 
-var _jsxFileName = "C:\\Mytemp\\vitumaja\\fullStack\\part2.2\\src\\components\\Notifications.js";
+var _jsxFileName = "C:\\mytemp\\vitumaja\\fullStack\\part2.2\\src\\components\\Notifications.js";
 
 const Notification = _ref => {
   let {
@@ -360,7 +375,7 @@ __webpack_require__.r(__webpack_exports__);
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 
-var _jsxFileName = "C:\\Mytemp\\vitumaja\\fullStack\\part2.2\\src\\components\\Person.js";
+var _jsxFileName = "C:\\mytemp\\vitumaja\\fullStack\\part2.2\\src\\components\\Person.js";
 
 
 const Persons = _ref => {
@@ -444,7 +459,7 @@ __webpack_require__.r(__webpack_exports__);
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 
-var _jsxFileName = "C:\\Mytemp\\vitumaja\\fullStack\\part2.2\\src\\components\\PersonForm.js";
+var _jsxFileName = "C:\\mytemp\\vitumaja\\fullStack\\part2.2\\src\\components\\PersonForm.js";
 
 
 const PersonForm = _ref => {
@@ -559,7 +574,7 @@ __webpack_require__.r(__webpack_exports__);
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 
-var _jsxFileName = "C:\\Mytemp\\vitumaja\\fullStack\\part2.2\\src\\index.js";
+var _jsxFileName = "C:\\mytemp\\vitumaja\\fullStack\\part2.2\\src\\index.js";
 
 
 
@@ -43717,7 +43732,7 @@ const toJSONObject = obj => {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("97823f571a3d45fb44f3")
+/******/ 		__webpack_require__.h = () => ("f6dd39f8c51cf37f0f78")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

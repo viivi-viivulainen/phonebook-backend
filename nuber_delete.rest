@@ -1,7 +1,7 @@
-DELETE http://localhost:3001/api/persons
+DELETE http://localhost:3001/api/persons/ajsaijiia
 
 content-type: application/json
 
 {
-    "number": "39-23-6423122"
+    "number": "0287336303773"
 }
